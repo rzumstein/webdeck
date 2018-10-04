@@ -51,7 +51,7 @@ func robots(w http.ResponseWriter, r *http.Request) {
 }
 
 func renderTemplate(w http.ResponseWriter, fname string, r *http.Request) {
-	t, err := template.ParseFiles("templates/base.html", "templates/"+fname+".html")
+	t, err := template.ParseFiles("templates/base.html.tmpl", "templates/"+fname+".html.tmpl")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
